@@ -24,5 +24,11 @@ class ItemController extends Controller
         return response()->json([
             "status" => "success"],200);
     }
-    
+    public function getItemById(Request $request){
+        $item = Item::find($request->id);
+        return response()->json([
+            "status" => "Success",
+            "user" => $item,
+        ]);
+    }
 }

@@ -15,6 +15,7 @@ Route::group(['middleware' => 'api'], function($router) {
 
 Route::get('/getitems', [ItemController::class, 'GetItems']);
 Route::post('/additem', [ItemController::class, 'addItem']);
+Route::post('/getitembyid', [ItemController::class, 'getItemById']);
 /*
 |--------------------------------------------------------------------------
 | API Routes
