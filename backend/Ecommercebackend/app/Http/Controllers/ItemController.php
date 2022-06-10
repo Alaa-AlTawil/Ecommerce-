@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 use App\Models\Item;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    public function getitems(){
+    public function getItems(){
         $items=Item::all();
         return response()->json([
             "status" => "success",
@@ -21,14 +22,37 @@ class ItemController extends Controller
         $item->Categoryid=$request->cat_id;
         $item->Img=$request->img;
         $item->save();
+        
         return response()->json([
             "status" => "success"],200);
     }
+
     public function getItemById(Request $request){
         $item = Item::find($request->id);
         return response()->json([
             "status" => "Success",
             "user" => $item,
         ]);
+    }
+
+    public function addCategory(Request $request){
+        
+        $cat=new Category;
+        $cat->categoryname=$request->catname; 
+        $cat->save();
+
+        return response()->json(["status" => "success"],200);
+    } 
+
+    public function getCategoryById(Request $request){
+        $cat = Category::find($request->id);
+        return response()->json([
+            "status" => "Success",
+            "category" => $cat,
+        ],200);
+    }
+
+    public function getAllCategory(){
+        return response()->json(["category"=> Category::all()]);
     }
 }

@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JWTController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\FavoriteController;
+
 
 Route::group(['middleware' => 'api'], function($router) {
     Route::post('/register', [JWTController::class, 'register']);
@@ -16,6 +18,13 @@ Route::group(['middleware' => 'api'], function($router) {
 Route::get('/getitems', [ItemController::class, 'GetItems']);
 Route::post('/additem', [ItemController::class, 'addItem']);
 Route::post('/getitembyid', [ItemController::class, 'getItemById']);
+Route::post('/addcategory', [ItemController::class, 'addCategory']);
+Route::post('/getcategorybyid', [ItemController::class, 'getCategoryById']);
+Route::get('/getallcategory', [ItemController::class, 'getAllCategory']);
+
+Route::post('/getalluseritemfav', [FavoriteController::class,'getAllUserItemFav']);
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,5 +37,6 @@ Route::post('/getitembyid', [ItemController::class, 'getItemById']);
 */
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+
     return $request->user();
 });
