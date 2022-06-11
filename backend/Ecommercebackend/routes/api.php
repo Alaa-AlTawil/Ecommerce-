@@ -21,6 +21,7 @@ Route::post('/getitembyid', [ItemController::class, 'getItemById']);
 Route::post('/addcategory', [ItemController::class, 'addCategory']);
 Route::post('/getcategorybyid', [ItemController::class, 'getCategoryById']);
 Route::get('/getallcategory', [ItemController::class, 'getAllCategory']);
+Route::post('/addfavorite', [FavoriteController::class, 'addfavorite']);
 
 Route::post('/getalluseritemfav', [FavoriteController::class,'getAllUserItemFav']);
 

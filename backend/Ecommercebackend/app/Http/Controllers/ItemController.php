@@ -31,7 +31,7 @@ class ItemController extends Controller
         $item = Item::find($request->id);
         return response()->json([
             "status" => "Success",
-            "user" => $item,
+            "item" => $item,
         ]);
     }
 

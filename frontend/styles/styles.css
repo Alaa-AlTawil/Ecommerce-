@@ -163,6 +163,14 @@ table {
     padding: 10px;
    
 } 
+#favorites{
+    margin: 10px 30px;
+    width: calc(100% - 30px); 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center; 
+}
 #addrestaurant{
     margin: 10px 30px;
     width: calc(100% - 30px); 
