@@ -7,7 +7,6 @@ axios({
         for (var i = 0; i < response.data["items"].length; i++) {
 
             let base64img = response.data["items"][i]["Img"];
-            console.log(base64img)
             let t = response.data["items"][i]["Name"];
             let d = response.data["items"][i]["Price"];
             let i_d = response.data["items"][i]["id"];
@@ -17,8 +16,6 @@ axios({
             <div>${t}</div>
             <div>${d} $</div>
             </div>`
-
-
             document.getElementById('addrestaurant').appendChild(newDiv)
         }
 

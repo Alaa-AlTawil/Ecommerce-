@@ -26,7 +26,7 @@ function function2() {
       url: "http://127.0.0.1:8000/api/register",
       data: data2,
     }).then(function (response) {
-      console.log(response.data["email"][0]);
+      console.log(response.data);
     });
   }
 }

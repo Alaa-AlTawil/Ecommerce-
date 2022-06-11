@@ -153,11 +153,14 @@ table {
     font-size: 2em;
     margin-left:  25px;
     margin-right: 25px;
-    margin-bottom: 20px;    
+    margin-bottom: 20px; 
+    background-color: rgb(165, 236, 165);  
+    border-radius: 8px; 
 }
 .restor img{
     width: 250px;
     height: 250px;
+    padding: 10px;
    
 } 
 #addrestaurant{

@@ -14,6 +14,7 @@ function function1() {
       url: "http://127.0.0.1:8000/api/login",
       data: data1,
     }).then(function (response) {
+        console.log(response.data["error"])
       if (response.data["error"] == "Unauthorized") {
         alert("incorrect email or password");
       }
