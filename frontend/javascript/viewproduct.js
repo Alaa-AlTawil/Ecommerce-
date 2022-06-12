@@ -70,18 +70,7 @@ axios({
                     // categories.appendChild(opt);
                     cat.innerHTML+=`<option value="${response.data["category"][i]["id"]}">
                     ${response.data["category"][i]["categoryname"]}
-                    </option>`
-
-                    
-
-
-
-                    document.getElementById(response.data["category"][i]["id"]).addEventListener("click",items)
-                    function items(){
-                   
-
-                    }
-                    
+                    </option>`                    
                 }
             })
             document.getElementById("choosecat").addEventListener("click",function(){

@@ -3,6 +3,23 @@ var image = document.getElementById("addimage");
 var price = document.getElementById("price");
 var category = document.getElementById("category");
 var s;
+var cat =document.getElementById("categories")
+axios({
+    method: 'get',
+    url: "http://127.0.0.1:8000/api/getallcategory",
+})
+.then(function (response){
+    console.log(response.data["category"]);
+    for (var i=0; i < response.data["category"].length; i++){
+        // var opt = document.createElement('option');
+        // opt.setAttribute('id', response.data["category"][i]["id"]);
+        // opt.innerHTML = response.data["category"][i]["categoryname"];
+        // categories.appendChild(opt);
+        cat.innerHTML+=`<option value="${response.data["category"][i]["id"]}">
+        ${response.data["category"][i]["categoryname"]}
+        </option>`                    
+    }
+})
 document.getElementById("addbtn").addEventListener("click",function(){
     let data=new FormData();
     data.append("catname",document.getElementById("categoryname").value)
@@ -27,7 +44,7 @@ function encodeImageFileAsURL(element) {
   }
 function function2(){ 
 
-    if (title.value=="" ||image.value=="" ||price.value=="" ||category.value==""){
+    if (title.value=="" ||image.value=="" ||price.value=="" ||cat.value==""){
         alert("fill all data please");
     }
     else{
@@ -36,7 +53,7 @@ function function2(){
         let data2=new FormData();
         data2.append("itemname",title.value);
         data2.append("itemprice",price.value);
-        data2.append("cat_id",category.value);
+        data2.append("cat_id",cat.value);
         data2.append("img",s);
         
         axios({
