@@ -3,6 +3,19 @@ var image = document.getElementById("addimage");
 var price = document.getElementById("price");
 var category = document.getElementById("category");
 var s;
+document.getElementById("addbtn").addEventListener("click",function(){
+    let data=new FormData();
+    data.append("catname",document.getElementById("categoryname").value)
+    axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/api/addcategory',
+        data: data,
+    })
+    .then(function(response){
+        return response
+    })
+})
+
 document.getElementById("additembtn").addEventListener("click",function2);
 function encodeImageFileAsURL(element) {
     var file = element.files[0];
