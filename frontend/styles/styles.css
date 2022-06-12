@@ -171,7 +171,7 @@ table {
     flex-wrap: wrap;
     text-align: center; 
 }
-#addrestaurant{
+#additemms{
     margin: 10px 30px;
     width: calc(100% - 30px); 
     display: flex;
@@ -179,7 +179,7 @@ table {
     flex-wrap: wrap;
     text-align: center; 
 }
-#addrestaurant table {
+#additemms table {
     margin-top: 50px;
     table-layout: fixed;
     border-spacing: 0;
@@ -192,23 +192,5 @@ table {
     border-left: solid 2px rgb(20, 20, 20);
 
 }
-.reviews {
-    width: 50%;
-    background-color: gray;
-    margin-right: 15px;
-    border-radius: 8px;
-    box-shadow: 6px 5px 20px rgba(0, 0, 0, 0.75);
-    color: aliceblue;
-    
-}
-#addrestaurant table td{
-    border-bottom: solid 2px rgb(20, 20, 20);
-}
-.view{
-    width: 40%;
-    margin-left:10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: sans-serif;
-}
+
+

@@ -15,13 +15,6 @@ class ItemController extends Controller
         ],200);
 
     }
-    public function categoryItems(Request $request){
-        $item=Item::where('Categoryid',$request->id);
-        return response()->json([
-            "status" => "success",
-            "items" =>$item   
-        ],200);
-    }
     public function addItem(Request $request){
         $item=new Item;
         $item->Name=$request->itemname;
@@ -41,15 +34,15 @@ class ItemController extends Controller
             "item" => $item,
         ]);
     }
-
-    public function addCategory(Request $request){
-        
-        $cat=new Category;
-        $cat->categoryname=$request->catname; 
-        $cat->save();
-
-        return response()->json(["status" => "success"],200);
-    } 
+    public function getCategoryItems(Request $request){
+        $items=Item::where("Categoryid",$request->id)->get();
+        return response()->json([
+            "status" => "Success",
+            "category" => $items,
+        ],200);
+    }
+    
+    
 
     public function getCategoryById(Request $request){
         $cat = Category::find($request->id);
