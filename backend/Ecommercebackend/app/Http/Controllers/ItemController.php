@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller
 {
@@ -54,5 +55,18 @@ class ItemController extends Controller
 
     public function getAllCategory(){
         return response()->json(["category"=> Category::all()]);
+    }
+
+    public function userId(Request $request)
+    {
+        return response()->json(
+            [    
+              Auth::user()->id,
+              Auth::id(),   
+              auth()->user()->id,
+              $request->user()->id
+            ]
+            );
+        // return $request->user();
     }
 }

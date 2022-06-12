@@ -12,20 +12,22 @@
             <div class="head3"></div>
             <div class="head4"></div>
         </div>
-        <div class="adddiv" style="margin-top: 80px;">
-            <input class="inputs" type="text" id="addtitle" placeholder="product name">
-            <input class="inputs" type="text" id="price" placeholder="price">
-            <input type="file" id="addimage" onchange="encodeImageFileAsURL(this)">
-            <input class="inputs" type="text" id="category" placeholder="category">
-            <button class="inputs" style="background-color:green;color:white; border-width: 0;"  id="additembtn">Add Product</button>
+        <div >
+            <div class="adddiv" style="margin-top: 80px;">
+                <input class="inputs" type="text" id="addtitle" placeholder="product name">
+                <input class="inputs" type="text" id="price" placeholder="price">
+                <input type="file" id="addimage" onchange="encodeImageFileAsURL(this)">
+                <input class="inputs" type="text" id="category" placeholder="category">
+                <button class="inputs" style="background-color:green;color:white; border-width: 0;"  id="additembtn">Add Product</button>
 
+            </div>
+            <div class="addiv" style="margin-top: 80px;">
+                <h1>Add Category</h1>
+                <input class="inputs" type="text" id="categoryname" placeholder="Category name">
+                <input type="submit" class="inputs" id="addbtn" value="Add Category " style="background-color:green;color:white; border-width: 0;">
+
+            </div>
         </div>
-        <div class="addiv" >
-            <input class="inputs" type="text" id="categoryname" placeholder="Category name">
-            <input type="submit" id="addbtn" value="Add">
-
-        </div>
-
         <script src="./javascript/addproduct.js"></script>
     </body>
 </html>
