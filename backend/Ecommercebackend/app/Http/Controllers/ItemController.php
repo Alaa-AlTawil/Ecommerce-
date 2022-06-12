@@ -15,6 +15,13 @@ class ItemController extends Controller
         ],200);
 
     }
+    public function categoryItems(Request $request){
+        $item=Item::where('Categoryid',$request->id);
+        return response()->json([
+            "status" => "success",
+            "items" =>$item   
+        ],200);
+    }
     public function addItem(Request $request){
         $item=new Item;
         $item->Name=$request->itemname;

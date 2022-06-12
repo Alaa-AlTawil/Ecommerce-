@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JWTController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\CategoryController;
 
 
 Route::group(['middleware' => 'api'], function($router) {
@@ -22,7 +23,7 @@ Route::post('/addcategory', [ItemController::class, 'addCategory']);
 Route::post('/getcategorybyid', [ItemController::class, 'getCategoryById']);
 Route::get('/getallcategory', [ItemController::class, 'getAllCategory']);
 Route::post('/addfavorite', [FavoriteController::class, 'addfavorite']);
-
+Route::post('/addcategory', [CategoryController::class,'addCategory']);
 Route::post('/getalluseritemfav', [FavoriteController::class,'getAllUserItemFav']);
 
 
